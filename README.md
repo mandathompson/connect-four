@@ -1,2 +1,3 @@
-# mandathompson-yahoo.com
+# Connect Four Game Assignment
+
 Connect Four
