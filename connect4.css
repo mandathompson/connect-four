@@ -1,29 +1,104 @@
+/* 
 /* game board table */
 
-#board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+
+body {
+	background-color: rgb(27, 27, 27);
+	display: block;
+}
+#header {
+	width: 100%;
+	height: vh20;
+	position: relative;
 }
 
+.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 15em;
+}
+#board td {
+	width: 50px;
+	height: 50px;
+	border: solid 1px rgb(7, 222, 250);
+	position: relative;
+}
+
+#game {
+	position: relative;
+}
+
+#board {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
 /* pieces are div within game table cells: draw as colored circles */
 
 .piece {
-  /* TODO: make into circles */
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
+	/* TODO: make into circles */
+	margin: 5px;
+	width: 80%;
+	height: 80%;
+	border-radius: 25px;
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	animation-name: drop;
+	animation-duration: 1s;
 }
 
+.p1 {
+	background-color: rgb(255, 0, 212);
+}
+.p2 {
+	background-color:rgb(5, 211, 5);
+}
 /* TODO: make pieces red/blue,  depending on player 1/2 piece */
 
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
-  border: dashed 1px lightgray;
+	border: dashed 1px rgb(7, 222, 250);
 }
 
 #column-top td:hover {
-  background-color: gold;
+	background-color: rgb(255, 136, 0);
+}
+
+#button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+@keyframes drop {
+	0% {
+		left: 1px;
+		top: -200px;
+	}
+	100% {
+		left: 1px;
+		top: 1px;
+	}
+}
+
+#button {
+  background-color: rgb(255, 136, 0);
+  outline: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+	border: 0;
+  padding: 10px 15px;
+	color: white;
+	border-radius: 3px;
+	width: 250px;
+  cursor: pointer; 
+  font-size: 18px; 
 }
